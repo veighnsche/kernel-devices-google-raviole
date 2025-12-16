@@ -53,7 +53,7 @@ filegroup(
         "//private/devices/google/gs101:defconfig_fragments",
         "raviole_defconfig",
         "gentoo_lxc_powerhouse.fragment",
-        "lxc_enhanced.fragment",
+        "linux_backports.fragment",
     ],
 )
 

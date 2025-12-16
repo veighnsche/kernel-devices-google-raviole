@@ -1,0 +1,10 @@
+# Linux Backports Fragment
+# TEAM_001: Configs for backported features from newer kernels
+#
+# This fragment is for testing kernel features backported from newer Linux versions
+# to the 6.1 kernel used by Pixel 6.
+#
+# Workflow:
+#   1. Add configs to linux_backports.aspirations
+#   2. Test incrementally by adding to this fragment
+#   3. Update linux_backports.last_working after each successful boot

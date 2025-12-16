@@ -1,0 +1,14 @@
+# Linux Backports Aspirations
+# TEAM_001: Researched configs for backported features
+#
+# STATUS: Configs to be tested incrementally
+# ACTION: Add configs to linux_backports.fragment and test boot
+#
+# =============================================================================
+# BACKPORT CANDIDATES
+# =============================================================================
+# Add researched backport configs here with documentation of:
+#   - What feature it enables
+#   - Which kernel version it's from
+#   - Dependencies required
+#   - Known issues/conflicts
