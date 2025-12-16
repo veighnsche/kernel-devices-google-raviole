@@ -1,17 +1,11 @@
-# LXC Enhanced Fragment - BISECT TEST A
-# TEAM_001: Testing first half of networking configs
+# LXC Enhanced Fragment - LAST WORKING
+# TEAM_001: Verified configs that boot successfully
 #
 # gentoo_lxc_powerhouse.fragment = WORKING baseline
 
 # Test group A: MACVLAN only (PASSED)
 CONFIG_MACVLAN=y
 CONFIG_MACVTAP=y
-
-# Test group B: IPVLAN (FAILED - bootloop)
-# SKIP: Nice-to-have only. MACVLAN provides same core functionality.
-# IPVLAN only useful for 100+ containers to avoid MAC exhaustion.
-# CONFIG_IPVLAN=y
-# CONFIG_IPVLAN_L3S=y
 
 # Test group C: VXLAN/GENEVE/DUMMY (PASSED)
 # VXLAN: Docker Swarm/K8s multi-host overlay networks
@@ -45,31 +39,3 @@ CONFIG_NF_CONNTRACK_ZONES=y
 CONFIG_NF_CONNTRACK_EVENTS=y
 CONFIG_NF_CONNTRACK_TIMEOUT=y
 CONFIG_NF_CONNTRACK_TIMESTAMP=y
-
-# Test group E: nftables + Enhanced Cgroups + Filesystems
-# nftables: Modern iptables replacement, better performance
-# Cgroups: Memory/IO accounting for containers
-# Filesystems: OverlayFS enhancements, FUSE, Squashfs for images
-CONFIG_NF_TABLES=y
-CONFIG_NF_TABLES_IPV4=y
-CONFIG_NF_TABLES_IPV6=y
-CONFIG_NF_TABLES_INET=y
-CONFIG_NF_TABLES_NETDEV=y
-CONFIG_NFT_NAT=y
-CONFIG_NFT_MASQ=y
-CONFIG_NFT_REDIR=y
-CONFIG_MEMCG_KMEM=y
-CONFIG_BLK_CGROUP_IOCOST=y
-CONFIG_BLK_CGROUP_IOPRIO=y
-CONFIG_BFQ_GROUP_IOSCHED=y
-CONFIG_OVERLAY_FS_REDIRECT_DIR=y
-CONFIG_OVERLAY_FS_INDEX=y
-CONFIG_OVERLAY_FS_XINO_AUTO=y
-CONFIG_OVERLAY_FS_METACOPY=y
-CONFIG_TMPFS_POSIX_ACL=y
-CONFIG_TMPFS_XATTR=y
-CONFIG_FUSE_FS=y
-CONFIG_SQUASHFS=y
-CONFIG_SQUASHFS_ZLIB=y
-CONFIG_SQUASHFS_LZ4=y
-CONFIG_SQUASHFS_ZSTD=y

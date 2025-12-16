@@ -183,3 +183,25 @@ CONFIG_WIREGUARD=y
 # Need to test each config individually to find culprit
 # 
 # Current test: MACVLAN + MACVTAP only in lxc_enhanced.fragment
+
+# =============================================================================
+# DOC-COVERAGE ADDON (missing from lxc_enhanced.future, but explicitly required in docs)
+# Paste this block into lxc_enhanced.future.
+# =============================================================================
+
+# ---- PTY isolation / container SSH correctness (docs) ----
+CONFIG_DEVPTS_MULTIPLE_INSTANCES=y
+
+# ---- Entropy + crypto accel on Tensor/Exynos path (docs) ----
+CONFIG_HW_RANDOM=y
+CONFIG_HW_RANDOM_EXYNOS=y
+CONFIG_CRYPTO_DEV_EXYNOS=y
+
+# ---- Storage inline crypto (docs: keep enabled) ----
+CONFIG_SCSI_UFS_CRYPTO=y
+CONFIG_BLK_INLINE_ENCRYPTION=y
+CONFIG_BLK_INLINE_ENCRYPTION_FALLBACK=y
+
+# ---- eBPF visibility + future-proof netfilter plumbing (docs) ----
+CONFIG_BPF_SYSCALL=y
+CONFIG_NETFILTER_XT_MATCH_BPF=y
