@@ -1,6 +1,40 @@
-# LXC/Container Support for Pixel 6 (Raviole)
-# Full LXC support with KABI patches applied to kernel source
-# Patches: kernel/module/version.c, include/linux/sched.h, include/linux/sched/user.h
+# =====================================================================
+# HARD INVARIANT — DO NOT MODIFY THIS FILE
+# =====================================================================
+#
+# This defconfig is a KNOWN-GOOD, BOOTING BASELINE for:
+#   - Pixel 6 (Raviole)
+#   - Full LXC / container / namespace support
+#   - Custom KABI patches already applied
+#
+# THIS FILE IS NOT A TUNING TARGET.
+# THIS FILE IS NOT A DEBUG SURFACE.
+#
+# DO NOT:
+#   - Disable options here
+#   - Remove options here
+#   - "Clean up" or "minimize" this file
+#   - Guess which options are unnecessary
+#
+# BOOT LOOP DEBUGGING RULE:
+#   - If a boot loop occurs, the cause IS NOT in this file
+#   - DO NOT attempt to fix boot loops by editing this defconfig
+#
+# CORRECT WORKFLOW:
+#   1. LEAVE THIS FILE COMPLETELY UNCHANGED
+#   2. Create or update a SEPARATE *.fragment file
+#   3. Enable/disable options ONLY in the fragment
+#   4. Iterate gradually until the failure is isolated
+#
+# AI CODER CONSTRAINT:
+#   - You are not permitted to edit this file
+#   - You must request or create a fragment instead
+#
+# This rule exists because editing this file has already destroyed
+# known-working configurations and wasted significant debugging time.
+#
+# THIS FILE IS EFFECTIVELY READ-ONLY.
+# =====================================================================
 
 # IPC (requires KABI patch for user_struct)
 CONFIG_SYSVIPC=y

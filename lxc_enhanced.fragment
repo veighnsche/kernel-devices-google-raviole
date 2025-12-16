@@ -1,0 +1,8 @@
+# LXC Enhanced Fragment - BISECT TEST A
+# TEAM_001: Testing first half of networking configs
+#
+# gentoo_lxc_powerhouse.fragment = WORKING baseline
+
+# Test group A: MACVLAN only
+CONFIG_MACVLAN=y
+CONFIG_MACVTAP=y
