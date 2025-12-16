@@ -52,8 +52,10 @@ filegroup(
         # do not sort
         "//private/devices/google/gs101:defconfig_fragments",
         "raviole_defconfig",
+        "gentoo_lxc_powerhouse.fragment",
     ],
 )
+
 
 filegroup(
     name = "kernel_sources",
