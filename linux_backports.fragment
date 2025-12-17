@@ -12,3 +12,7 @@
 #   3. Update linux_backports.last_working after each successful boot
 #
 # =============================================================================
+
+# TEAM_029: BORE Scheduler - Burst-Oriented Response Enhancer
+# Improves interactive responsiveness under load by tracking burst behavior
+CONFIG_SCHED_BORE=y
