@@ -334,3 +334,37 @@ CONFIG_DAMON_RECLAIM=y
 # Superior to fq_codel for bandwidth management, especially on mobile networks
 # Better latency control and bandwidth sharing
 CONFIG_NET_SCH_CAKE=y
+
+# =============================================================================
+# BBRv3 TCP Congestion Control
+# =============================================================================
+# BBR (Bottleneck Bandwidth and RTT) congestion control algorithm
+#
+# IMPORTANT: These configs enable BBRv1 (currently in kernel).
+# Full BBRv3 requires code replacement of net/ipv4/tcp_bbr.c
+# See: .docs/.planning/PLAN_BBRv3_IMPLEMENTATION.md
+#
+# Benefits:
+#   - Higher throughput on lossy/bufferbloated networks
+#   - Lower latency than CUBIC
+#   - Better performance on mobile networks
+#
+# BBRv3 additional benefits (requires code change):
+#   - 12% reduction in retransmit rate
+#   - Better fairness with CUBIC/Reno flows
+#   - ECN support for explicit congestion notification
+# -----------------------------------------------------------------------------
+
+# Enable advanced TCP congestion control options (required for BBR)
+CONFIG_TCP_CONG_ADVANCED=y
+
+# Enable BBR congestion control module
+CONFIG_TCP_CONG_BBR=y
+
+# Fair Queue packet scheduler - REQUIRED for BBR pacing
+# BBR uses FQ to pace packets and avoid bursts
+CONFIG_NET_SCH_FQ=y
+
+# Optional: Set BBR as default congestion control
+# Uncomment after verifying BBR works correctly
+# CONFIG_DEFAULT_BBR=y
