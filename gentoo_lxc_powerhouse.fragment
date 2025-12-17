@@ -181,3 +181,10 @@ CONFIG_BLK_INLINE_ENCRYPTION=y
 CONFIG_BLK_INLINE_ENCRYPTION_FALLBACK=y
 CONFIG_BPF_SYSCALL=y
 CONFIG_NETFILTER_XT_MATCH_BPF=y
+
+# =============================================================================
+# BACKPORTED FEATURES (tested and working)
+# =============================================================================
+
+# A3: kTLS (Kernel TLS) - Offload TLS encryption to kernel
+CONFIG_TLS=y
