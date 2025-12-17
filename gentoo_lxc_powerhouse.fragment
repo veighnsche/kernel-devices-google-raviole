@@ -297,3 +297,40 @@ CONFIG_ARM64_PTR_AUTH=y
 
 # Shadow Call Stack - return address protection
 CONFIG_SHADOW_CALL_STACK=y
+
+# =============================================================================
+# CATEGORY P: PERFORMANCE UPGRADES
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# P1: ZSWAP - Compressed Swap Cache (HIGH IMPACT)
+# -----------------------------------------------------------------------------
+# Pages are compressed in RAM before hitting swap storage
+# Benefits: 2-3x effective RAM for compressible workloads, faster than disk swap
+# Note: All ZRAM/ZSMALLOC must be built-in for ZSWAP to work
+CONFIG_ZRAM=y
+CONFIG_ZRAM_GS=y
+CONFIG_ZCOMP_CPU=y
+CONFIG_ZSMALLOC=y
+CONFIG_ZSWAP=y
+CONFIG_ZSWAP_DEFAULT_ON=y
+CONFIG_ZSWAP_COMPRESSOR_DEFAULT_LZ4=y
+CONFIG_ZSWAP_ZPOOL_DEFAULT_ZSMALLOC=y
+CONFIG_CRYPTO_LZ4=y
+
+# -----------------------------------------------------------------------------
+# P2: DAMON - Data Access Monitoring Enhancements
+# -----------------------------------------------------------------------------
+# Physical address monitoring (complements existing DAMON_VADDR)
+CONFIG_DAMON_PADDR=y
+
+# Proactive cold page reclaim - reclaims unused pages under light pressure
+# Reduces OOM likelihood and improves memory efficiency
+CONFIG_DAMON_RECLAIM=y
+
+# -----------------------------------------------------------------------------
+# P3: CAKE - Common Applications Kept Enhanced (Network QoS)
+# -----------------------------------------------------------------------------
+# Superior to fq_codel for bandwidth management, especially on mobile networks
+# Better latency control and bandwidth sharing
+CONFIG_NET_SCH_CAKE=y
