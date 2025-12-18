@@ -16,3 +16,8 @@
 # TEAM_029: BORE Scheduler - Burst-Oriented Response Enhancer
 # Improves interactive responsiveness under load by tracking burst behavior
 CONFIG_SCHED_BORE=y
+
+# TEAM_033: le9uo Working Set Protection
+# Protects anonymous and clean file pages from reclaim to prevent thrashing
+# Powerhouse profile: disabled by default, 20/20/0 ratios when enabled
+CONFIG_WORKING_SET_PROTECTION=y

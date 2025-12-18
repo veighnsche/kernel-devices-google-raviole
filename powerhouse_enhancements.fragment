@@ -1,0 +1,49 @@
+# =============================================================================
+# POWERHOUSE ENHANCEMENTS FRAGMENT
+# =============================================================================
+# TEAM_039: Consolidated kconfig from TEAM_038's container-first enhancements
+# See POWERHOUSE_ENHANCEMENTS.md for detailed documentation and rationale.
+#
+# Contents:
+#   - LSM Stacking (Letter C)
+#   - Cgroup v2 Complete (Letter E)
+#   - Memory Bias (Letter F)
+#   - FS Encryption/Integrity (Letter G)
+#   - Audit/Forensics (Letter H) - no additional kconfig needed
+#   - Network Fairness (Letter I) - no additional kconfig needed
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# LSM STACKING (Letter C)
+# -----------------------------------------------------------------------------
+CONFIG_SECURITY_LANDLOCK=y
+CONFIG_SECURITY_PATH=y
+CONFIG_SECURITY_YAMA=y
+CONFIG_BPF_LSM=y
+CONFIG_SECURITY_LOCKDOWN_LSM=y
+CONFIG_SECURITY_LOCKDOWN_LSM_EARLY=y
+CONFIG_LOCK_DOWN_KERNEL_FORCE_NONE=y
+
+# -----------------------------------------------------------------------------
+# CGROUP V2 COMPLETE (Letter E)
+# -----------------------------------------------------------------------------
+# CONFIG_CFS_BANDWIDTH=y
+# CONFIG_RT_GROUP_SCHED=y
+CONFIG_BLK_CGROUP_IOLATENCY=y
+CONFIG_CGROUP_PERF=y
+CONFIG_CGROUP_MISC=y
+
+# -----------------------------------------------------------------------------
+# MEMORY BIAS (Letter F)
+# -----------------------------------------------------------------------------
+CONFIG_LRU_GEN_STATS=y
+CONFIG_DAMON_LRU_SORT-y
+
+# -----------------------------------------------------------------------------
+# FS ENCRYPTION + INTEGRITY (Letter G)
+# -----------------------------------------------------------------------------
+CONFIG_ENCRYPTED_KEYS=y
+CONFIG_PERSISTENT_KEYRINGS=y
+CONFIG_BIG_KEYS=y
+CONFIG_KEYS_REQUEST_CACHE=y
+CONFIG_CRYPTO_ADIANTUM=y

@@ -54,6 +54,8 @@ filegroup(
         "raviole_defconfig",
         "gentoo_lxc_powerhouse.fragment",
         "linux_backports.fragment",
+        # TEAM_039: Consolidated container-first enhancements (Letters C,E,F,G,H,I)
+        "powerhouse_enhancements.fragment",
     ],
 )
 
