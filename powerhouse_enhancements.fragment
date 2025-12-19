@@ -24,6 +24,10 @@ CONFIG_SECURITY_LOCKDOWN_LSM=y
 CONFIG_SECURITY_LOCKDOWN_LSM_EARLY=y
 CONFIG_LOCK_DOWN_KERNEL_FORCE_NONE=y
 
+# SELinux: Allow boot param to set permissive mode for LXC bridge networking
+# Boot with enforcing=0 to allow bridge/veth operations
+CONFIG_SECURITY_SELINUX_BOOTPARAM=y
+
 # -----------------------------------------------------------------------------
 # CGROUP V2 COMPLETE (Letter E)
 # -----------------------------------------------------------------------------
@@ -37,7 +41,7 @@ CONFIG_CGROUP_MISC=y
 # MEMORY BIAS (Letter F)
 # -----------------------------------------------------------------------------
 CONFIG_LRU_GEN_STATS=y
-CONFIG_DAMON_LRU_SORT-y
+CONFIG_DAMON_LRU_SORT=y
 
 # -----------------------------------------------------------------------------
 # FS ENCRYPTION + INTEGRITY (Letter G)
